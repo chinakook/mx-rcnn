@@ -180,7 +180,7 @@ class MutableModule(BaseModule):
         if shape_changed:
             self._curr_module._symbol = self._symbol
             self._curr_module.binded=False
-            module.bind(data_batch.provide_data, data_batch.provide_label, self._curr_module.for_training,
+            self._curr_module.bind(data_batch.provide_data, data_batch.provide_label, self._curr_module.for_training,
                         self._curr_module.inputs_need_grad, force_rebind=False,
                         shared_module=self._curr_module)
 
